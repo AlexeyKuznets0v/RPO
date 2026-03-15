@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Заголовок -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Введите PIN-код"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#6200EE"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Отображение PIN -->
+    <TextView
+        android:id="@+id/tvPinDisplay"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/pin_display_background"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        android:letterSpacing="0.5"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <!-- Подсказка -->
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Введите 4 цифры"
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPinDisplay" />
+
+    <!-- PIN Pad -->
+    <GridLayout
+        android:id="@+id/pinPadGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="4"
+        android:layout_marginTop="48dp"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHint">
+
+        <!-- Row 1 -->
+        <Button
+            android:id="@+id/btn1"
+            style="@style/PinPadButton"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn2"
+            style="@style/PinPadButton"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/btn3"
+            style="@style/PinPadButton"
+            android:text="3" />
+
+        <!-- Row 2 -->
+        <Button
+            android:id="@+id/btn4"
+            style="@style/PinPadButton"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/btn5"
+            style="@style/PinPadButton"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btn6"
+            style="@style/PinPadButton"
+            android:text="6" />
+
+        <!-- Row 3 -->
+        <Button
+            android:id="@+id/btn7"
+            style="@style/PinPadButton"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/btn8"
+            style="@style/PinPadButton"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/btn9"
+            style="@style/PinPadButton"
+            android:text="9" />
+
+        <!-- Row 4 -->
+        <Button
+            android:id="@+id/btnClear"
+            style="@style/PinPadButtonSecondary"
+            android:text="C" />
+
+        <Button
+            android:id="@+id/btn0"
+            style="@style/PinPadButton"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            style="@style/PinPadButtonSecondary"
+            android:text="⌫" />
+
+    </GridLayout>
+
+
+	<!-- Сумма транзакции -->
+		<TextView
+    android:id="@+id/tvAmount"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Сумма: 0.00 руб."
+    android:textSize="20sp"
+    android:textColor="#000000"
+    android:layout_marginTop="16dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+<!-- Количество попыток -->
+	<TextView
+    android:id="@+id/tvAttempts"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Осталось попыток: 3"
+    android:textSize="16sp"
+    android:textColor="#FF0000"
+    android:layout_marginTop="8dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tvAmount" />
+    <!-- Кнопка подтверждения -->
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="200dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#6200EE"
+        android:text="Подтвердить"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pinPadGrid" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
